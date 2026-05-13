@@ -1,16 +1,16 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
-[  ] Custom Animation
-[  ] Include Three Images
+[ x ] Two Interactive Drop-down Inputs 
+[ x ] Standard Animation
+[ x ] Custom Animation
+[ x ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
 [ no ] Feature 4 - :hover Feature 
-[ no ] Feature 5 - Add an Additional Interactive Drop-down
+[ x ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
 <!DOCTYPE html>
@@ -22,33 +22,19 @@ Select ONE Additional Feature to Add
   </head>
   <body>
     <h1>Quiz About [Me]</h1>
-    <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
-      <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
-        </select>
-      </label>
-      <button type="submit">Check Movie Answer</button>
-    </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
-    </div>
+    <img src="https://s.yimg.com/ny/api/res/1.2/ImQ0yGyYFQ_ebD5POpQqOw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTg1MjtjZj13ZWJw/https://media.zenfs.com/en/usa_today_news_641/11d223543182153b79d63be876e5fd0b" alt="Animals Image">
+    <img src="https://i0.wp.com/www.wildlifenomads.com/wp-content/uploads/2025/08/Biggest-Whales-infographic-1.png?resize=467%2C700&ssl=1" alt="Question Image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJEuh1hyLARox9xXIVOdj2xLVmmJQM3sH3Q&s" alt="Question Image">
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 What is the biggest bird ?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Elephant Bird</option>
+          <option value="book2">Hawk</option>
+          <option value="book3">falcon</option>
+          <option value="book4">Shoebill</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -56,24 +42,26 @@ Select ONE Additional Feature to Add
     <div id="book-result">
       <p id="book-text"></p>
     </div>
+    <hr />
+    <!-- Mammal Question -->
+    <form id="mammal-form">
+      <label>
+        🐘 What is the biggest mammal?
+        <select id="mammal-answer">
+          <option value="mammal1">Blue Whale</option>
+          <option value="mammal2">Elephant</option>
+          <option value="mammal3">Giraffe</option>
+          <option value="mammal4">Rhino</option>
+        </select>
+      </label>
+      <button type="submit">Check Mammal Answer</button>
+    </form>
+    <div id="mammal-result">
+      <p id="mammal-text"></p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
-      //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
-        event.preventDefault();
-
-        var $answer = $("#movie-answer");
-        var answer = $answer.val();
-
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
-        } 
-        else {
-          $("#movie-text").text("Try Again!");
-        }
-      });
-
       //=======================Book Question jQuery Code
       $("#book-form").on("submit", function (event) {
         event.preventDefault();
@@ -87,8 +75,24 @@ Select ONE Additional Feature to Add
         else {
           $("#book-text").text("Try Again!");
         }
+        $("#book-result").slideDown();
       });
-      
+
+      //=======================Mammal Question jQuery Code
+      $("#mammal-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#mammal-answer");
+        var answer = $answer.val();
+
+        if (answer === "mammal1") {
+          $("#mammal-text").text("YESSSS!");
+        } 
+        else {
+          $("#mammal-text").text("Try Again!");
+        }
+        $("#mammal-result").slideDown().animate({borderWidth: "10px"}, 1000);
+      });
     </script>
   </body>
 
